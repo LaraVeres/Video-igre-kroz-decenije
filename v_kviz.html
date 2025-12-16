@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor" content="Lara Veres IV9">
+    <meta name="keywords" content="video igre, razvoj igara, 3D, 2D">
+    <link rel="stylesheet" href="video_igre.css">
+    <title>Video igre kroz decenije</title>
+</head>
+<body class="dark-theme">
+    <header>
+        <h1>Video igre kroz decenije</h1>
+        <div class="header-right">
+            <nav class="navbar">
+                <a href="v_index.html">Početna</a>
+                <a href="v_80s-90s.html">80-90-te</a>
+                <a href="v_2000-2010.html">2000-2010</a>
+                <a href="v_modern.html">Moderne igre</a>
+                <a href="v_kviz.html">Kviz</a>
+            </nav>
+            <!--
+            <button id="theme-toggle">Promeni temu</button>
+            -->
+        </div>
+    </header>
+
+    <div class="content">
+        <p>Odgovori na pitanja i testiraj svoje znanje o poznatim video igrama!</p>
+
+        <form id="quiz-form">
+
+            <p>1. Koja igra je deo reboot trilogije i izašla 2018.?</p>
+            <input type="radio" id="q1a1" name="q1" value="Tomb Raider">
+            <label for="q1a1">Shadow of the Tomb Raider</label><br>
+            <input type="radio" id="q1a2" name="q1" value="Prince of Persia: Sands of time">
+            <label for="q1a2">Prince of Persia: Sands of time</label><br>
+            <input type="radio" id="q1a3" name="q1" value="Resident Evil">
+            <label for="q1a3">Resident Evil</label><br>
+
+            <p>2. Koja igra je trkačka simulacija?</p>
+            <select name="q2" id="q2">
+                <option value="">Izaberi...</option>
+                <option value="F1 25">F1 25</option>
+                <option value="Assassin's Creed">Assassin's Creed</option>
+                <option value="Devil May Cry">Devil May Cry</option>
+            </select>
+
+            <p>3. Koje od sledećih igara spadaju u moderne RPG naslove? (može više odgovora)</p>
+            <input type="checkbox" id="q3a1" name="q3" value="The Witcher 3">
+            <label for="q3a1">The Witcher 3</label><br>
+            <input type="checkbox" id="q3a2" name="q3" value="Final Fantasy XVI">
+            <label for="q3a2">Final Fantasy XVI</label><br>
+            <input type="checkbox" id="q3a3" name="q3" value="Batman Arkham">
+            <label for="q3a3">Batman Arkham</label><br>
+
+            <p>4. Kako se zove glavni lik u Assassin's Creed II?</p>
+            <input type="text" id="q4" name="q4" placeholder="Upiši ime...">
+
+            <p>5. Koja igra je poznata po multiplayer strategiјi sa crvima?</p>
+            <input type="radio" id="q5a1" name="q5" value="Worms Armageddon">
+            <label for="q5a1">Worms Armageddon</label><br>
+            <input type="radio" id="q5a2" name="q5" value="Devil May Cry">
+            <label for="q5a2">Devil May Cry</label><br>
+            <input type="radio" id="q5a3" name="q5" value="Prince of Persia">
+            <label for="q5a3">Prince of Persia</label><br>
+
+            <br>
+            <!--<button type="button" onclick="checkQuiz()">Proveri odgovore</button>-->
+            <button type="button" >Proveri odgovore</button>
+        </form>
+
+        <p id="quiz-result"></p>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2025 Video igre kroz decenije</p>
+    </footer>
+
+    <!--
+    <script>
+        function checkQuiz() {
+            let score = 0;
+
+            const answersRadioText = {
+                q1: "Tomb Raider",
+                q4: "Ezio",  
+                q5: "Worms Armageddon"
+            };
+
+            const answersSelect = {
+                q2: "F1 25"
+            };
+
+            // svi moraju biti cekirani da bi bilo poena
+            const answersCheckbox = ["The Witcher 3","Final Fantasy XVI"];
+
+            for (let q in answersRadioText) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`) || document.getElementById(q);
+                if (selected) {
+                    if (selected.type === "text" && selected.value.trim().toLowerCase() === answersRadioText[q].toLowerCase()) {
+                        score++;
+                    } else if (selected.checked && selected.value === answersRadioText[q]) {
+                        score++;
+                    }
+                }
+            }
+
+            for (let q in answersSelect) {
+                const select = document.getElementById(q);
+                if (select.value === answersSelect[q]) score++;
+            }
+
+            const checkedBoxes = Array.from(document.querySelectorAll('input[name="q3"]:checked')).map(cb => cb.value);
+            if (answersCheckbox.every(ans => checkedBoxes.includes(ans)) && checkedBoxes.length === answersCheckbox.length) {
+                score++;
+            }
+
+            alert(`Osvojio/la si ${score} od 5 poena!`);
+        }
+
+        document.querySelector('button[type="button"]').addEventListener('click', checkQuiz);
+        </script>
+
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme');
+        });
+    </script>
+    -->
+</body>
+
+</html>
